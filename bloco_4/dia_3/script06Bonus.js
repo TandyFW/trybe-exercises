@@ -1,4 +1,4 @@
-let n = 29;
+let n = 10;
 let check = 0;
 
 for(let pos = 1; pos <= n; pos += 1){
