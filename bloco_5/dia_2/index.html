@@ -102,6 +102,17 @@
       newElement7.className = 'small-image';
       element7.appendChild(newElement7);
 
+      // 08. Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista.
+      // Essa lista deve ser filha do div criado no passo 6;
+      let element8 = document.querySelector('.right-content');
+      let newElement8 = document.createElement('ul');
+      element8.appendChild(newElement8);
+      for(let pos = 1; pos < 11; pos += 1){
+        let newElement82 = document.createElement('li');
+        newElement82.innerHTML = pos;
+        element8.firstElementChild.appendChild(newElement82);
+      }
+
     </script>
   </body>
 </html>
