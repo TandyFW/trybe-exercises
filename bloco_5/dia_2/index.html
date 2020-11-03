@@ -113,6 +113,16 @@
         element8.firstElementChild.appendChild(newElement82);
       }
 
+      // 09. Adicione 3 tags h3, todas sendo filhas do div criado no passo 2.
+      let element9 = document.querySelector('.main-content');
+      for(let pos = 0; pos < 3; pos += 1){
+        let newElement9 = document.createElement('h3');
+        newElement9.innerText = 'Só para ver no h3 no html';
+        element9.appendChild(newElement9);
+      }
+      
+
+
     </script>
   </body>
 </html>
