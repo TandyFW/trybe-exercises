@@ -78,12 +78,20 @@ function btnEventHolidays () {
   let holidays = document.querySelectorAll('.holiday');
   btn.addEventListener('click', function(){
     for (let index = 0; index < holidays.length; index += 1) {
-      if (holidays[index].style.backgroundColor = "rgb(238 , 238 , 238)") { 
-      holidays[index].style.backgroundColor = "lightgreen";
+      if (holidays[index].style.backgroundColor === "lightgreen") { 
+      holidays[index].style.backgroundColor = "rgb(238,238,238)";
     } else {
-      holidays[index].style.backgroundColor = "rgb(238 , 238 , 238)";
+      holidays[index].style.backgroundColor = "lightgreen";
+    }
     };
-    };
+    myColorholiday = !myColorholiday;
   });
 }
 btnEventHolidays();
+
+/*
+Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
+Adicione a este botão o ID "btn-friday".
+Adicione este botão como filho/filha da tag <div> com classe "buttons-container".
+*/
+
