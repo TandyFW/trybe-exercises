@@ -37,11 +37,11 @@ function dezDays () {
       liDays.innerHTML = day;
       ulDays.appendChild(liDays);
     } else if (day === 4 || day === 11 || day === 18) {
-      liDays.className = 'day friday';
+      liDays.className = 'day friday-day';
       liDays.innerHTML = day;
       ulDays.appendChild(liDays);
     } else if (day === 25) {
-      liDays.className = 'day holiday friday';
+      liDays.className = 'day holiday friday-day';
       liDays.innerHTML = day;
       ulDays.appendChild(liDays);
     } else {
@@ -75,22 +75,21 @@ btnFeriados('Feriados');
 
 function btnEventHolidays () {
   let btn = document.querySelector('#btn-holiday');
-  let holidays = document.querySelectorAll('.holiday');
   btn.addEventListener('click', function(){
+    let holidays = document.querySelectorAll('.holiday');
     for (let index = 0; index < holidays.length; index += 1) {
       if (holidays[index].style.backgroundColor === "lightgreen") { 
       holidays[index].style.backgroundColor = "rgb(238,238,238)";
     } else {
       holidays[index].style.backgroundColor = "lightgreen";
     }
-    };
-    myColorholiday = !myColorholiday;
+    }
   });
 }
 btnEventHolidays();
 
 /*
-Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
+04. Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
 Adicione a este botão o ID "btn-friday".
 Adicione este botão como filho/filha da tag <div> com classe "buttons-container".
 */
@@ -105,10 +104,22 @@ function friday(string) {
 friday("Sexta-feira");
 
 /*
-Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
+05. Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
 É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias.
 */
 
-function sextou () {
-  let btn = document.querySelector('#tbn-friday');
+function btnSextou () {
+  let btn = document.querySelector('#btn-friday');
+  let dezFridays = [4, 11, 18, 25];
+  btn.addEventListener('click', function(){
+    let sextas = document.querySelectorAll('.friday-day');
+    for (let index = 0; index < sextas.length; index += 1) {
+      if (sextas[index].innerHTML === "Sextou!") { 
+        sextas[index].innerHTML = dezFridays[index];
+    } else {
+      sextas[index].innerHTML = "Sextou!";
+    }
+    }
+  });
 }
+btnSextou();
