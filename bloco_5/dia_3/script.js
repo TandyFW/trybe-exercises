@@ -139,8 +139,21 @@ function zoom() {
   document.addEventListener('mouseout', function(e){
     if (e.target.className == 'day') {
       e.target.style.fontSize = '20px';
-      console.log(e.target.innerHTML);
     }
   });
 }
 zoom();
+
+/*
+07. Implemente uma função que adiciona uma tarefa personalizada ao calendário. A função deve receber como parâmetro
+a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
+O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
+*/
+
+function newTask (newTask) {
+  let task = document.querySelector('.my-tasks');
+  let span = document.createElement('span');
+  span.innerText = newTask;
+  task.appendChild(span);
+}
+newTask("Codar");
