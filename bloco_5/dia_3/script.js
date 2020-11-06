@@ -133,12 +133,12 @@ Dica - Propriedade: event.target.
 function zoom() {
   let days = document.querySelector('#days');
   days.addEventListener('mouseover', function(e){
-    if (e.target.className == 'day') {
+    if (e.target.className === 'day') {
       e.target.style.transform = 'scale(2)';
     }
   });
   days.addEventListener('mouseout', function(e){
-    if (e.target.className == 'day') {
+    if (e.target.className === 'day') {
       e.target.style.transform = 'scale(1)';
     }
   });
@@ -191,3 +191,26 @@ function taskSelected() {
   });
 }
 taskSelected();
+
+/*
+10. Implemente uma função que adiciona um evento que ao clicar em um dia do mês no calendário,
+atribua a este dia a cor da legenda da sua tarefa selecionada.
+Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119).
+*/
+
+function dayTask() {
+  let days = document.querySelector('#days');
+  let dayInitialColor = document.querySelector('.day').color;
+  days.addEventListener('click', function(event){
+    if (event.target.className === 'day' && document.querySelector('.task').className === 'task selected') {
+      let taskColor = document.querySelector('.task').style.backgroundColor;
+      if (event.target.style.color === taskColor){
+        event.target.style.color = 'rgb(119,119,119)';
+      } else {
+        event.target.style.color = taskColor;
+      }
+    }
+  });
+}
+
+dayTask();
