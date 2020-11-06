@@ -131,14 +131,15 @@ Dica - Propriedade: event.target.
 */
 
 function zoom() {
-  document.addEventListener('mouseover', function(e){
+  let days = document.querySelector('#days');
+  days.addEventListener('mouseover', function(e){
     if (e.target.className == 'day') {
-      e.target.style.fontSize = '40px';
+      e.target.style.transform = 'scale(2)';
     }
   });
-  document.addEventListener('mouseout', function(e){
+  days.addEventListener('mouseout', function(e){
     if (e.target.className == 'day') {
-      e.target.style.fontSize = '20px';
+      e.target.style.transform = 'scale(1)';
     }
   });
 }
@@ -168,7 +169,25 @@ O elemento criado deverá ser adicionado como filho/filha da tag <div> que possu
 function legenda(cor) {
   div = document.querySelector('.my-tasks');
   legend = document.createElement('div');
+  legend.className = 'task';
   legend.style.backgroundColor = cor;
   div.appendChild(legend);  
 }
-legenda("red");
+legenda("green");
+
+/*
+09. Implemente uma função que adiciona um evento que ao clicar no elemento com a tag <div> referente a cor da sua tarefa,
+atribua a este elemento a classe task selected, ou seja, quando sua tarefa possuir a classe task selected ela estará selecionada.
+Ao clicar novamente no elemento a sua classe deverá voltar a ser somente task, ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
+*/
+function taskSelected() {
+  let task = document.querySelector('.task');
+  task.addEventListener('click', function () {
+    if (task.className === 'task') {
+      task.className = 'task selected';
+    } else {
+      task.className = 'task';
+    }
+  });
+}
+taskSelected();
