@@ -58,5 +58,27 @@ function validarDataAno() {
 }
 
 function montarCurriculo() {
+  let btnMontarcurriculo = document.querySelector('#montarCurriculo');
+  btnMontarcurriculo.addEventListener('click', function(event){
+    event.preventDefault();
+    let curriculo = document.querySelector('#curriculo');
+    curriculo.innerHTML = construirCurriculo();
+  });
+}
+montarCurriculo();
 
+function construirCurriculo() {
+  let inputText = document.querySelectorAll('input[type=text]');
+  let curriculo = '';
+  for (let index = 0; index < inputText.length; index += 1) {
+    if (inputText[index].value !== '') {
+      curriculo += inputText[index].value + '<br>';
+    }
+    if (inputText[index].id == cidade) {
+      let select = document.getElementById('estados');
+      let estado = select.options[select.selectedIndex].value;
+      curriculo += select.options[select.selectedIndex].text + '<br>';
+    }
+  }
+  return curriculo;
 }
