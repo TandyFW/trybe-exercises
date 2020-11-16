@@ -1,0 +1,16 @@
+.container {
+  width: 40%;
+  float: left;
+  margin-left: 15px;
+  padding-top: 25px;
+  padding-bottom: 30px;
+}
+
+.ladoAlado {
+  width: 49.4%;
+  display: inline-block;
+}
+
+.control {
+  margin-top: 10px;
+}
