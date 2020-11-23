@@ -8,4 +8,7 @@ const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
 // Seu código aqui.
 
-console.log(oddsAndEvens);
+const ordenar = (a , b) => (a - b);
+oddsAndEvens.sort(ordenar);
+
+console.log(`Os números ${oddsAndEvens} se encontram ordenados de forma crescente!`);
