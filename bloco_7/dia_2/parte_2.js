@@ -79,3 +79,6 @@ console.log(valorPorChave(lesson1, 0));
 Essa função deve possuir três parâmetros, sendo eles: o objeto, o nome da chave e o valor da chave.
 */
 
+const verificaPar = (objeto, chave, valor) => (objeto[chave] === valor ? true : false);
+console.log(verificaPar(lesson3, 'turno', 'noite'));
+console.log(verificaPar(lesson3, 'materia', 'Maria Clara'));
