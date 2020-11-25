@@ -68,5 +68,14 @@ const alunos = () => lesson1.numeroEstudantes + lesson2.numeroEstudantes + lesso
 console.log(alunos());
 
 /*
-7. Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto. Por exemplo:
+7. Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto.
 */
+
+const valorPorChave = (objeto, chave) => objeto[Object.keys(objeto)[chave]];
+console.log(valorPorChave(lesson1, 0));
+
+/*
+8. Crie uma função que verifique se o par (chave / valor) existe na função.
+Essa função deve possuir três parâmetros, sendo eles: o objeto, o nome da chave e o valor da chave.
+*/
+
