@@ -54,3 +54,9 @@ Cada chave desse novo objeto será uma aula, sendo essas chaves: lesson1, lesson
 Ao executar o comando console.log(allLessons), a saída deverá ser a seguinte:
 */
 
+const allLessons = {
+  lesson1: Object.assign({}, lesson1),
+  lesson2: Object.assign({}, lesson2),
+  lesson3: Object.assign({}, lesson3)
+};
+console.log(allLessons);
