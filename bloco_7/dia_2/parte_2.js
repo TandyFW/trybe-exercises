@@ -87,17 +87,36 @@ console.log(verificaPar(lesson3, 'materia', 'Maria Clara'));
 Bônus 1. Crie uma função para contar quantos estudantes assistiram às aulas de Matemática.
 Use o objeto criado no exercício 5.
 */
-const matAlunos = () => {
-  const lessons =  Object.keys(allLessons);
+const matAlunos = (objeto) => {
+  const lessons =  Object.keys(objeto);
   let matAlunos= 0;
   for (let index = 0; index < lessons.length; index += 1) {
-    allLessons[lessons[index]].materia === 'Matemática' ? matAlunos += allLessons[lessons[index]].numeroEstudantes : '';
+    objeto[lessons[index]].materia === 'Matemática' ? matAlunos += objeto[lessons[index]].numeroEstudantes : '';
   }
   return matAlunos;
 }
-console.log(matAlunos());
+console.log(matAlunos(allLessons));
 
 /*
 Bônus 2. Crie uma função que deverá retornar um objeto que representa o relatório do professor ou professora,
 as aulas que ele ou ela ministrou e o número total de estudantes. Use o objeto criado no exercício 5:
 */
+
+const relatorioProf = (objeto, prof) => {
+  const lessons =  Object.keys(allLessons);
+  let alunos = 0;
+  const materias = [];
+  for (let index = 0; index < lessons.length; index += 1) {
+    if (objeto[lessons[index]].professor === prof) {
+      alunos += objeto[lessons[index]].numeroEstudantes;
+      materias.push(objeto[lessons[index]].materia);
+    }
+  }
+  newObject = {
+    professor: prof,
+    aulas: materias,
+    estudantes: alunos
+  }
+  return newObject;
+}
+console.log(relatorioProf(allLessons, 'Maria Clara'));
