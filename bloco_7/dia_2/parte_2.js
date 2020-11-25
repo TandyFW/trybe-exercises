@@ -82,3 +82,22 @@ Essa função deve possuir três parâmetros, sendo eles: o objeto, o nome da ch
 const verificaPar = (objeto, chave, valor) => (objeto[chave] === valor ? true : false);
 console.log(verificaPar(lesson3, 'turno', 'noite'));
 console.log(verificaPar(lesson3, 'materia', 'Maria Clara'));
+
+/*
+Bônus 1. Crie uma função para contar quantos estudantes assistiram às aulas de Matemática.
+Use o objeto criado no exercício 5.
+*/
+const matAlunos = () => {
+  const lessons =  Object.keys(allLessons);
+  let matAlunos= 0;
+  for (let index = 0; index < lessons.length; index += 1) {
+    allLessons[lessons[index]].materia === 'Matemática' ? matAlunos += allLessons[lessons[index]].numeroEstudantes : '';
+  }
+  return matAlunos;
+}
+console.log(matAlunos());
+
+/*
+Bônus 2. Crie uma função que deverá retornar um objeto que representa o relatório do professor ou professora,
+as aulas que ele ou ela ministrou e o número total de estudantes. Use o objeto criado no exercício 5:
+*/
