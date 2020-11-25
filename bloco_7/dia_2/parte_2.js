@@ -31,3 +31,26 @@ console.log(lesson2);
 2. Crie uma função para listar as keys de um objeto. Essa função deve receber um objeto como parâmetro.
 */
 
+const chaves = objeto => Object.keys(objeto);
+console.log(chaves(lesson1));
+
+/*
+3. Crie uma função para mostrar o tamanho de um objeto.
+*/
+
+const tamanho = objeto => Object.keys(objeto).length + Object.values(objeto).length;
+console.log(tamanho(lesson1));
+
+/*
+4. Crie uma função para listar os valores de um objeto. Essa função deve receber um objeto como parâmetro.
+*/
+
+const valores = objeto => Object.values(objeto);
+console.log(valores(lesson1));
+
+/*
+5. Crie um objeto de nome allLessons, que deve agrupar todas as aulas através do Object.assign.
+Cada chave desse novo objeto será uma aula, sendo essas chaves: lesson1, lesson2 e lesson3.
+Ao executar o comando console.log(allLessons), a saída deverá ser a seguinte:
+*/
+
