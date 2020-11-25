@@ -91,7 +91,7 @@ const matAlunos = (objeto) => {
   const lessons =  Object.keys(objeto);
   let matAlunos= 0;
   for (let index = 0; index < lessons.length; index += 1) {
-    objeto[lessons[index]].materia === 'Matemática' ? matAlunos += objeto[lessons[index]].numeroEstudantes : '';
+    objeto[lessons[index]].materia.includes('Matemática') ? matAlunos += objeto[lessons[index]].numeroEstudantes : '';
   }
   return matAlunos;
 }
@@ -107,7 +107,7 @@ const relatorioProf = (objeto, prof) => {
   let alunos = 0;
   const materias = [];
   for (let index = 0; index < lessons.length; index += 1) {
-    if (objeto[lessons[index]].professor === prof) {
+    if (objeto[lessons[index]].professor.includes(prof)) {
       alunos += objeto[lessons[index]].numeroEstudantes;
       materias.push(objeto[lessons[index]].materia);
     }
