@@ -77,21 +77,22 @@ const expectedResult = {
   releaseYear: 1991
 };
 
-function getNamedBook() {
-  // escreva seu código aqui
-  const author = books.find((element) => element.name.length === 26).author;
-  const genre = books.find((element) => element.name.length === 26).genre;
-  const id = books.find((element) => element.name.length === 26).id;
-  const name = books.find((element) => element.name.length === 26).name;
-  const releaseYear = books.find((element) => element.name.length === 26).releaseYear;
-  return {
-    author,
-    genre,
-    id,
-    name,
-    releaseYear
-  }
-  
-}
+// function getNamedBook() {
+//   // escreva seu código aqui
+//   const author = books.find((element) => element.name.length === 26).author;
+//   const genre = books.find((element) => element.name.length === 26).genre;
+//   const id = books.find((element) => element.name.length === 26).id;
+//   const name = books.find((element) => element.name.length === 26).name;
+//   const releaseYear = books.find((element) => element.name.length === 26).releaseYear;
+//   return {
+//     author,
+//     genre,
+//     id,
+//     name,
+//     releaseYear
+//   }
+// }
+
+const getNamedBook = () => books.find((element) => element.name.length === 26);
 
 assert.deepStrictEqual(getNamedBook(), expectedResult);
