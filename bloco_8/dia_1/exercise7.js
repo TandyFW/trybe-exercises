@@ -73,7 +73,6 @@ function authorUnique() {
   const releaseYear = [];
   let result = true;
   books.forEach((element) => releaseYear.push(element.author.birthYear));
-  
   releaseYear.forEach((element, index) => {
     if (releaseYear.indexOf(element) !== index) {
       result = false;
@@ -83,3 +82,5 @@ function authorUnique() {
 }
 
 assert.strictEqual(authorUnique(), expectedResult);
+
+//http://devfuria.com.br/logica-de-programacao/vetor-valores-repetidos/
