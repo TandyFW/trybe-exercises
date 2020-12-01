@@ -111,19 +111,21 @@ const expectedResult = [
   }
 ] ;
 
-function booksOrderedByReleaseYearDesc() {
-  // escreva aqui seu código
-  const compare = (a, b) => {
-    if (a.releaseYear < b.releaseYear) {
-      return 1;
-    }
-    if (a.releaseYear > b.releaseYear) {
-      return -1;
-    }
-    return 0;
-  }
-  return books.sort(compare);
-}
+// function booksOrderedByReleaseYearDesc() {
+//   // escreva aqui seu código
+//   const compare = (a, b) => {
+//     if (a.releaseYear < b.releaseYear) {
+//       return 1;
+//     }
+//     if (a.releaseYear > b.releaseYear) {
+//       return -1;
+//     }
+//     return 0;
+//   }
+//   return books.sort(compare);
+// }
+
+const booksOrderedByReleaseYearDesc = () => books.sort((a, b) => b.releaseYear - a.releaseYear);
 
 assert.deepStrictEqual(booksOrderedByReleaseYearDesc(), expectedResult);
 
