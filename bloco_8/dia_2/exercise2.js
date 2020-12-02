@@ -100,7 +100,7 @@ const nameAndAge = () => {
       'age': element.releaseYear - element.author.birthYear,
       'author': element.author.name
     }
-  }).sort((a,b) => a.age > b.age ? 1 : a.age < b.age ? -1 : 0);
+  }).sort((a,b) => a.age - b.age);
 }
 
 assert.deepStrictEqual(nameAndAge(), expected_result);
