@@ -110,6 +110,7 @@ const expectedResult = [
   },
 ]
 
-const fantasyOrScienceFiction = () => books.filter((element) => (element.genre === 'Fantasia' || element.genre === 'Ficção Científica'));
+const fantasyOrScienceFiction = () => books
+.filter((element) => (element.genre === 'Fantasia' || element.genre === 'Ficção Científica'));
 
 assert.deepStrictEqual(fantasyOrScienceFiction(), expectedResult);

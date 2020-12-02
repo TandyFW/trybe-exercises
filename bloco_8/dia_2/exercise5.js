@@ -73,8 +73,8 @@ const expectedResult = [
   'J. R. R. Tolkien'
 ]
 
-const fantasyOrScienceFictionAuthors = () => {
-  return books.filter((element) => element.genre === 'Fantasia' || element.genre === 'Ficção Científica').map((element) => element.author.name).sort();
-}
+const fantasyOrScienceFictionAuthors = () => books
+.filter((element) => element.genre === 'Fantasia' || element.genre === 'Ficção Científica').map((element) => element.author.name)
+.sort();
 
 assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expectedResult);

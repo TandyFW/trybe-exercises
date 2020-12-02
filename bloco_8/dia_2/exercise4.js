@@ -91,6 +91,6 @@ const expectedResult = [
   }
 ]
 
-const oldBooks = () => books.filter((element) => element.releaseYear < 1960).sort((a ,b) => a.releaseYear > b.releaseYear ? 1 : a.releaseYear < b.releaseYear ? -1 : 0);
+const oldBooks = () => books.filter((element) => element.releaseYear < 1960).sort((a ,b) => a.releaseYear - b.releaseYear);
 
 assert.deepStrictEqual(oldBooks(), expectedResult);
