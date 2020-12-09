@@ -7,7 +7,8 @@ const assert = require('assert');
 const myList = [1, 2, 3];
 
 // escreva swap abaixo
-const swap = (array) => ;
+const swap = ([a, b, c]) => [c, b, a];
+
 const swappedList = swap(myList);
 
 assert.strictEqual(swappedList[0], 3);
