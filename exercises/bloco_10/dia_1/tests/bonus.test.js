@@ -13,7 +13,10 @@ describe('Testando funcionalidades da função searchEmployee', () => {
   it('Testa se a função retorna as especialidades do(a) funcionário(a) pesquisado(a) pelo id', () => {
     expect(['UX', 'Design']).toEqual(searchEmployee('8579-6', 'specialities'));
   });
-  it('Testa se a função retorna o Error ID não identificada caso não encontre um id', () => {
-    expect(() => searchEmployee('1111-1', 'firstName').toThrow('ID não identificada'));
+  it('Testa se a função retorna o Error "ID não identificada" caso não encontre um id', () => {
+    expect(() => searchEmployee('1111-1', 'firstName')).toThrow('ID não identificada');
+  });
+  it('Testa se a função retorna o Error "Informação indisponível" caso não encontre um detail.', () => {
+    expect(() => searchEmployee('8579-6', 'email')).toThrow('Informação indisponível');
   });
 });
