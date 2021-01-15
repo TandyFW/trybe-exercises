@@ -20,7 +20,8 @@ class Usuarios extends React.Component {
   
     return (
       <div className="Usuarios">
-        {users.map(user => <UserProfile user={user} key={user.email} />)}
+        <UserProfile user={users[0]} />
+        <UserProfile user={users[1]} />
       </div>
     );
   }
