@@ -1,16 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 
-const task = (value) => {
+const array = ['HTML', 'CSS', 'JavaScript', 'SoftSkills', 'React', 'HOF'];
+
+const task = (array) => {
   return (
-    <li>{value}</li>
+    array.map(item => <li>{item}</li> )
   );
 }
 
 function App() {
   return (
     <ol>
-      {task('HTML')}
+      {task(array)}
     </ol>
   );
 }
