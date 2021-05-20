@@ -13,4 +13,4 @@ const imc = () => {
   if (imc < 18.5) return console.log(`imc: ${imc.toFixed(2)}, Situação: Abaixo do peso (magreza).`);
 };
 
-module.exports = imc;
+imc();

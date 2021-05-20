@@ -13,4 +13,4 @@ const fatorial = () => {
   console.log(`O fatorial de ${input} é ${result}.`);
 }
 
-module.exports = fatorial;
+sorteio();

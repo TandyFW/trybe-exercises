@@ -9,4 +9,4 @@ const sorteio = () => {
   if (again === 's') return sorteio();
 }
 
-module.exports = sorteio;
+sorteio();

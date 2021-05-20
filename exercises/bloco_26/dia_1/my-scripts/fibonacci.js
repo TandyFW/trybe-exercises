@@ -14,4 +14,4 @@ const fibonacci = () => {
   console.log(...result);
 }
 
-module.exports = fibonacci;
+fibonacci();

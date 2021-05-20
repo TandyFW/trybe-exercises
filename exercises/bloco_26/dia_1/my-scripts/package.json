@@ -9,7 +9,8 @@
     "velocidade": "node velocidade.js",
     "imc": "node imc.js",
     "sorteio": "node sorteio.js",
-    "fatorial": "node fatorial.js"
+    "fatorial": "node fatorial.js",
+    "fibonacci": "node fibonacci.js"
   },
   "keywords": [],
   "author": "",

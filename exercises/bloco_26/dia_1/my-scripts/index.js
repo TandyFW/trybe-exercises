@@ -1,9 +1,4 @@
 const readline = require('readline-sync');
-const imc = require('./imc');
-const velocidade = require('./velocidade');
-const sorteio = require('./sorteio');
-const fatorial = require('./fatorial');
-const fibonacci = require('./fibonacci');
 
 const opcoes = () => {
   console.log('Lista de funções.');
@@ -16,11 +11,11 @@ const opcoes = () => {
   const input = readline.questionInt('Escolha uma função inserindo seu número.');
   
   switch(input) {
-    case 1: return imc();
-    case 2: return velocidade();
-    case 3: return sorteio();
-    case 4: return fatorial();
-    case 5: return fibonacci();
+    case 1: return require('./imc');
+    case 2: return require('./velocidade');
+    case 3: return require('./sorteio');
+    case 4: return require('./fatorial');
+    case 5: return require('./fibonacci');
     default: return error();
   }
 }  
