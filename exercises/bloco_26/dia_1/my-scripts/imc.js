@@ -1,16 +1,16 @@
 const readline = require('readline-sync');
 
-const imc = (peso, altura) => {
-  const IMC = (peso / altura**2);
-  if (IMC >= 40) return `imc: ${IMC.toFixed(2)}, Situação: Obesidade graus III e IV.`;
-  if (IMC >= 35) return `imc: ${IMC.toFixed(2)}, Situação: Obesidade grau II.`;
-  if (IMC >= 30) return `imc: ${IMC.toFixed(2)}, Situação: Obesidade grau I.`;
-  if (IMC >= 25) return `imc: ${IMC.toFixed(2)}, Situação: Acima do peso (sobrepeso).`;
-  if (IMC >= 18.5) return `imc: ${IMC.toFixed(2)}, Situação: Peso normal.`;
-  if (IMC < 18.5) return `imc: ${IMC.toFixed(2)}, Situação: Abaixo do peso (magreza).`;
+const imc = () => {
+  const IMC = (peso, altura) => peso / altura**2;
+  const peso = readline.questionFloat('Qual seu peso? ');
+  const altura = readline.questionFloat('Qual sua altura em metros? ');
+  const imc = IMC(peso, altura);
+  if (imc >= 40) return console.log(`imc: ${imc.toFixed(2)}, Situação: Obesidade graus III e IV.`);
+  if (imc >= 35) return console.log(`imc: ${imc.toFixed(2)}, Situação: Obesidade grau II.`);
+  if (imc >= 30) return console.log(`imc: ${imc.toFixed(2)}, Situação: Obesidade grau I.`);
+  if (imc >= 25) return console.log(`imc: ${imc.toFixed(2)}, Situação: Acima do peso (sobrepeso).`);
+  if (imc >= 18.5) return console.log(`imc: ${imc.toFixed(2)}, Situação: Peso normal.`);
+  if (imc < 18.5) return console.log(`imc: ${imc.toFixed(2)}, Situação: Abaixo do peso (magreza).`);
 };
 
-const peso = readline.questionFloat('Qual seu peso?');
-const altura = readline.questionFloat('Qual sua altura em metros?');
-
-console.log(imc(peso, altura));
+module.exports = imc;

@@ -1,8 +1,12 @@
 const readline = require('readline-sync');
 
-const velocidade = (distancia, tempo) => distancia / tempo;
+const vel = (distancia, tempo) => distancia / tempo;
 
-const distancia = readline.questionInt('Informe a distancia em metros. ');
-const tempo = readline.questionInt('Informe a tempo em segundos. ');
+const velocidade = () => {
+  const distancia = readline.questionInt('Informe a distancia em metros. ');
+  const tempo = readline.questionInt('Informe a tempo em segundos. ');
+  
+  console.log(`${vel(distancia, tempo)}m/s`);
+}
 
-console.log(`${velocidade(distancia, tempo)}m/s`);
+module.exports = velocidade;
