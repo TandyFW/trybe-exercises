@@ -8,7 +8,8 @@
     "start": "node index.js",
     "velocidade": "node velocidade.js",
     "imc": "node imc.js",
-    "sorteio": "node sorteio.js"
+    "sorteio": "node sorteio.js",
+    "fatorial": "node fatorial.js"
   },
   "keywords": [],
   "author": "",
