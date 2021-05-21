@@ -1,6 +1,6 @@
 const recipes = require('../recipes');
 
-const addIngredient = (req, res, next) => {
+const addIngredient = (req, res) => {
   if(!req.body.insert) return next();
   const newIngredients = req.body.insert;
   const id = req.params.id;

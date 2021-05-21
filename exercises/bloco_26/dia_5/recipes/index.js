@@ -11,6 +11,6 @@ app.get('/recipe', midlewares.recipesArray);
 
 app.get('/recipe/:id/ingredients', midlewares.verifyId, midlewares.searchRecipe);
 
-app.post('/recipe/:id/ingredients', midlewares.verifyId, midlewares.addIngredient);
+app.put('/recipe/:id/ingredients', midlewares.verifyId, midlewares.addIngredient);
 
-app.post('/recipe/:id/ingredients', midlewares.verifyId, midlewares.deleteIngredient);
+app.put('/recipe/:id/ingredients', midlewares.verifyId, midlewares.deleteIngredient);
