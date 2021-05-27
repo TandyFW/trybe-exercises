@@ -22,8 +22,15 @@ const findById = async (id) => {
   return books;
 }
 
+const create = async (title, author_id) => {
+  await connection.execute(
+    'INSERT INTO bloco_27.books (title, author_id) VALUES (?, ?)', [title, author_id],
+  );
+}
+
 module.exports = {
   getAll,
   getByAuthorId,
   findById,
+  create,
 }

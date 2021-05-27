@@ -46,4 +46,16 @@ app.get('/books/:id', async (req, res) => {
   res.status(200).json(books);
 });
 
+app.post('/books', async (req, res) => {
+  const { title, author_id } = req.body;
+  if (!title || !author_id) return res.status(400).json({ message: 'Dados inválidos.' });
+  if (title.length < 3) return res.status(400).json({ message: 'Dados inválidos.' });
+  try {
+    await Book.create(title, author_id);
+    res.status(201).json({ message: 'Livro criado com sucesso.' });
+  } catch(err) {
+    return res.status(400).json({ message: 'Autor não cadastrado.' });
+  }
+});
+
 app.listen(PORT, () => console.log(`Servidor aberto na porta ${PORT}`));
