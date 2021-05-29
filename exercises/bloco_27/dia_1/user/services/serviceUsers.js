@@ -12,8 +12,18 @@ const createUser = async (firstName, lastName, email, password) => {
   return modelUser.create(firstName, lastName, email, password);
 }
 
+const findById = async (userId) => {
+  return modelUser.findById(userId);
+}
+
+const updateOne = async (userId, changes) => {
+  return modelUser.updateOne(userId, changes);
+}
+
 module.exports = {
   userValid,
   createUser,
+  findById,
+  updateOne,
 }
 
