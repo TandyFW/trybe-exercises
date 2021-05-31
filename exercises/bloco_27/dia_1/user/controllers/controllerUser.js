@@ -15,6 +15,7 @@ const createUser = async (req, res) => {
 
 const getAll = async (_req, res) => {
   const users = await model.getAll();
+  console.log(users);
   res.status(200).json(users);
 }
 
