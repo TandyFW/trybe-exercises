@@ -32,16 +32,16 @@ const auth = async (req, res, next) => {
   }
 };
 
-const validAuth = async (req, res, _next) => {
+const validAuth = async (req, res, next) => {
   const token = req.headers['authorization'];
   if (!token) return res.status(401).json({ error: { messsage: 'Token not found' } });
   try {
     const decoded = jwt.verify(token, secret);
-    console.log(decoded);
     const user = await userModel.findUser(decoded.data.username);
     if (!user) return res.status(401).json({ message: 'Erro ao procurar usuário do token.' });
     const result = { username: user.username, admin: decoded.data.admin };
-    res.status(200).json(result);
+    req.validation = result;
+    next();
   } catch (error) {
     return res.status(401).json({ message: error.message });
   }

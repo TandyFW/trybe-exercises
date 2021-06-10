@@ -9,8 +9,8 @@ app.use(express.json());
 
 app.post('/login', middlewares.auth, userController.create);
 
-app.get('/users/me', middlewares.validAuth);
+app.get('/users/me', middlewares.validAuth, userController.getUser);
+
+app.get('/top-secret', middlewares.validAuth, userController.getTopSecret);
 
 app.listen(PORT, () => console.log(`Servidor aberto na rota ${PORT}.`));
-
-// 28.1 - questão 7

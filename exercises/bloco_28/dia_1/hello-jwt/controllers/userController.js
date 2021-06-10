@@ -8,11 +8,21 @@ const create = async (req, res) => {
   res.status(201).json({ token });
 };
 
-const getUsers = async (req, res) => {
-  
+const getUser = async (req, res) => {
+  const { validation } = req;
+  res.status(200).json(validation);
 };
+
+const getTopSecret = async (req, res) => {
+  const { validation } = req;
+  console.log(validation);
+  const result = await userService.getTopSecret(validation.admin);
+  if (result.err) res.status(401).json(result);
+  res.status(200).json(result);
+}
 
 module.exports = {
   create,
-  getUsers,
+  getUser,
+  getTopSecret,
 };

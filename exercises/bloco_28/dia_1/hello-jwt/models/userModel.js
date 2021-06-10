@@ -4,7 +4,6 @@ const create = async (username, password) => {
   try {
     const db = await connection();
     const { ops } = await db.collection('user').insertOne({ username, password });
-    console.log('model');
     return ops.map(({_id, username, password}) => ({
       _id, username, password,
     }));

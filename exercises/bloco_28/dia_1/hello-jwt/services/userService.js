@@ -5,11 +5,16 @@ const create = async ({username, password}) => {
     return { err: { code: 400, message: 'username inválido.' }};
   if (typeof password !== 'string' || password.length < 5)
     return { err: { code: 400, message: 'password inválida.' }};
-  console.log('servive');
   const result = await userModel.create(username, password);
   return result;
 };
 
+const getTopSecret = async (admin) => {
+  if (!admin) return { err: { message: 'Restricted access' } };
+  return { secretInfo: 'Peter Parker é o Homem-Aranha' };
+}
+
 module.exports = {
   create,
+  getTopSecret,
 };
