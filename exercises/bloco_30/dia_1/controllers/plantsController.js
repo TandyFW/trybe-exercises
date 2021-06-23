@@ -3,14 +3,13 @@ const service = require('../index');
 const OK = 200;
 const CREATED = 201;
 
-const getAllPlants = (_req, res) => {
-  const plants = service.getPlants();
+const getAllPlants = async (_req, res) => {
+  const plants = await plantService.getAllPlants();
   res.status(OK).json(plants);
 };
 
-const getPlantById = (req, res) => {
-  const { id } = req.params;
-  const plant = service.getPlantById(id);
+const getPlantById = async (req, res) => {
+  const plant = await plantService.getPlantById(req.params.id);
   res.status(OK).json(plant);
 };
 
