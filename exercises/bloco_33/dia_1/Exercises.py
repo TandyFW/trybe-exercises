@@ -50,7 +50,8 @@ def biggerName(listOfNames):
 # que custam R$ 80,00. Crie uma função que retorne dois valores em uma
 # tupla contendo a quantidade de latas de tinta a serem compradas e o preço
 # total a partir do tamanho de uma parede(em m²).
-# Reference: https://www.kite.com/python/answers/how-to-print-a-float-with-two-decimal-places-in-python
+# Reference:
+# https://www.kite.com/python/answers/how-to-print-a-float-with-two-decimal-places-in-python
 
 
 def painting(meters):

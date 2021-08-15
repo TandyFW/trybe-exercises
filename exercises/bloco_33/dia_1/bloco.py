@@ -25,5 +25,5 @@ with open("texto.txt") as texto:
                 found = True
                 break
                 # Ternátio do Python!
-        row = line.strip() # strip para tirar a quebra de linha extra.
+        row = line.strip()  # strip para tirar a quebra de linha extra.
         print(row.upper()) if found else print(row)
